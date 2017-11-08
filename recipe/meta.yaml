@@ -1,5 +1,5 @@
 {% set name = "fs.sshfs" %}
-{% set version = "0.6.1" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name }}
@@ -7,11 +7,10 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5e9f218a382c8a82c9f639d1c0e3a622ed005fed03923966621bafbfe0da12f4
+  url: https://pypi.python.org/packages/f0/69/67681541e7c697b3a4f770910874be22c9d7414ec7a1101327751eab649c/fs.sshfs-0.7.0.tar.gz
+  sha256: 77c62f9e135890f9b24c834f7b5727e86517a2a8a21d2bfb0a8088c112b1ed74
 
 build:
-  skip: true  # [win]
   number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
@@ -23,9 +22,9 @@ requirements:
   run:
     - python
     - setuptools
-    - fs
-    - six
-    - paramiko
+    - fs >=2.0.7
+    - six >=1.10
+    - paramiko >=2.0
     - configparser  # [py<35]
 
 test:
