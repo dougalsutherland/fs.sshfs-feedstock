@@ -1,5 +1,5 @@
 {% set name = "fs.sshfs" %}
-{% set version = "0.6.1" %}
+{% set version = "0.7.1" %}
 
 package:
   name: {{ name }}
@@ -7,11 +7,10 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5e9f218a382c8a82c9f639d1c0e3a622ed005fed03923966621bafbfe0da12f4
+  url: https://pypi.python.org/packages/46/3a/524e282d45936558012db7bf58616f90b278721d3cea3194e4d790f04610/fs.sshfs-0.7.1.tar.gz
+  sha256sum: 4669ea1a0b796bc035045570c9efa29fb3cbe9e284e6a177730df6dd08ded340
 
 build:
-  skip: true  # [win]
   number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
@@ -21,12 +20,10 @@ requirements:
     - setuptools
 
   run:
-    - python
-    - setuptools
-    - fs
-    - six
-    - paramiko
-    - configparser  # [py<35]
+    - six >=1.10.0,<2
+    - paramiko >=2,<3
+    - fs >=2.0.7,<2.1
+    - configparser  # [py2k]
 
 test:
   imports:
@@ -35,7 +32,6 @@ test:
 about:
   home: https://github.com/althonos/fs.sshfs
   license: LGPL v2.1
-  license_file: '{{ environ["RECIPE_DIR"] }}/COPYING'
   summary: 'Pyfilesystem2 over SSH using paramiko'
   description: >
     Once created, the SSHFS filesystem behaves like any other filesystem
