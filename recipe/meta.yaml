@@ -32,6 +32,8 @@ test:
 about:
   home: https://github.com/althonos/fs.sshfs
   license: LGPL v2.1
+  license_family: LGPL
+  license_file: COPYING
   summary: 'Pyfilesystem2 over SSH using paramiko'
   description: >
     Once created, the SSHFS filesystem behaves like any other filesystem
