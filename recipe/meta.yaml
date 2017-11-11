@@ -11,7 +11,7 @@ source:
   sha256sum: 4669ea1a0b796bc035045570c9efa29fb3cbe9e284e6a177730df6dd08ded340
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -32,6 +32,8 @@ test:
 about:
   home: https://github.com/althonos/fs.sshfs
   license: LGPL v2.1
+  license_family: LGPL
+  license_file: COPYING
   summary: 'Pyfilesystem2 over SSH using paramiko'
   description: >
     Once created, the SSHFS filesystem behaves like any other filesystem
