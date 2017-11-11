@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.python.org/packages/46/3a/524e282d45936558012db7bf58616f90b278721d3cea3194e4d790f04610/fs.sshfs-0.7.1.tar.gz
-  sha256sum: 4669ea1a0b796bc035045570c9efa29fb3cbe9e284e6a177730df6dd08ded340
+  sha256: 4669ea1a0b796bc035045570c9efa29fb3cbe9e284e6a177730df6dd08ded340
 
 build:
   number: 1
