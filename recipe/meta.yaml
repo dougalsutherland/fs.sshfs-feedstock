@@ -20,6 +20,7 @@ requirements:
     - setuptools
 
   run:
+    - python
     - six >=1.10.0,<2
     - paramiko >=2,<3
     - fs >=2.0.7,<2.1
